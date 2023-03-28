@@ -8,6 +8,10 @@ plugins {
 group = "com.dependencyshield"
 version = "0.0.1"
 
+dependencies {
+    implementation("org.owasp:dependency-check-gradle:8.2.1")
+}
+
 gradlePlugin {
     website.set("https://www.dependencyshield.com")
     vcsUrl.set("https://github.com/dependencyshield/gradle-plugin")
