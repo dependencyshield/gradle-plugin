@@ -15,7 +15,7 @@ gradlePlugin {
         create("dependencyShieldPlugin") {
             id = "com.dependencyshield.gradle"
             displayName = "Plugin for DependencyShield"
-            description = "A plugin that helps you work with DependencyShield"
+            description = "A plugin that helps you work with DependencyShield. Uploads data to DependencyShield cloud and helps you with related dependencycheck plugin configuration."
             implementationClass = "com.dependencyshield.gradle.DependencyShieldPlugin"
             tags.set(listOf("dependencyshield", "security", "vulnerabilities"))
         }

@@ -13,5 +13,8 @@ public class DependencyShieldPlugin implements Plugin<Project> {
         uploadReport.configure(task -> task.getReportsDirectory().set(target.file(target.getBuildDir() + "/reports/")));
         target.getTasks().named("dependencyCheckAnalyze").configure(task -> task.finalizedBy(uploadReport));
         target.getTasks().named("dependencyCheckAggregate").configure(task -> task.finalizedBy(uploadReport));
+//        DependencyCheckExtension dependencyCheckExtension = target.getExtensions().getByType(DependencyCheckExtension.class);
+//        dependencyCheckExtension.setFormats(Arrays.asList("HTML", "JSON"));
+//        dependencyCheckExtension.setSuppressionFiles(List.of("https://suppression.dependencyshield.com/" + extension.getOrganizationId().get() + "/" + extension.getConfigurationId().get() + "/" + extension.getApiKey().get() + "/suppression.xml"));
     }
 }

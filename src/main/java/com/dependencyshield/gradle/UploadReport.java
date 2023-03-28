@@ -5,7 +5,6 @@ import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.TaskAction;
-import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -33,8 +32,11 @@ public abstract class UploadReport extends DefaultTask {
         this.uriPrefix = uriPrefix;
     }
 
+    /**
+     * Uploads the report to Dependency Shield.
+     */
     @TaskAction
-    public void greet() throws IOException, InterruptedException {
+    public void uploadReport() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest
             .newBuilder(URI.create(uriPrefix() + "/upload?organizationId="+organizationId.get()+"&configurationId="+configurationId.get()+"&apiKey="+apiKey.get()))
             .header("Content-Type", "application/json")
@@ -44,6 +46,7 @@ public abstract class UploadReport extends DefaultTask {
         if (response.statusCode() != 200) {
             throw new RuntimeException("Upload failed: " + response.body());
         }
+        getLogger().info("Report uploaded, it's available at {}/organizations/{}/configurations/{}/reports", uriPrefix(), organizationId.get(), configurationId.get());;
     }
 
     private String uriPrefix() {
