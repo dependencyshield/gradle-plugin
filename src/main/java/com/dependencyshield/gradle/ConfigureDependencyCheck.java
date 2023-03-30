@@ -50,7 +50,7 @@ public abstract class ConfigureDependencyCheck extends DefaultTask {
 
     @NotNull
     private String getSuppressionUrl() {
-        return "https://s3.amazonaws.com/suppression.dependencyshield.com/" + organizationId.get() + "/" + configurationId.get() + "/" + apiKey.get() + "/suppression.xml";
+        return "https://suppression.dependencyshield.com/" + organizationId.get() + "/" + configurationId.get() + "/" + apiKey.get() + "/suppression.xml";
     }
 }
 

@@ -6,7 +6,7 @@ plugins {
 
 
 group = "com.dependencyshield"
-version = "0.0.4"
+version = "0.0.5"
 
 dependencies {
     implementation("org.owasp:dependency-check-gradle:8.2.1")
