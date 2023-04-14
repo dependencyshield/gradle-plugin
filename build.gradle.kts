@@ -6,7 +6,7 @@ plugins {
 
 
 group = "com.dependencyshield"
-version = "0.0.5"
+version = "0.0.6"
 
 dependencies {
     implementation("org.owasp:dependency-check-gradle:8.2.1")
@@ -18,10 +18,10 @@ gradlePlugin {
     plugins {
         create("dependencyShieldPlugin") {
             id = "com.dependencyshield.gradle"
-            displayName = "Plugin for DependencyShield"
-            description = "A plugin that helps you work with DependencyShield. Uploads data to DependencyShield cloud and helps you with related dependencycheck plugin configuration."
+            displayName = "Plugin for Dependency Shield"
+            description = "A plugin that cofigures OWASP dependency check plugin to dowload suppression file from Dependency Shield and upload the reports."
             implementationClass = "com.dependencyshield.gradle.DependencyShieldPlugin"
-            tags.set(listOf("dependencyshield", "security", "vulnerabilities"))
+            tags.set(listOf("dependencyshield", "security", "vulnerabilities", "owasp", "dependency-check"))
         }
     }
 }
