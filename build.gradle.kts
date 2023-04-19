@@ -19,7 +19,7 @@ gradlePlugin {
         create("dependencyShieldPlugin") {
             id = "com.dependencyshield.gradle"
             displayName = "Plugin for Dependency Shield"
-            description = "A plugin that cofigures OWASP dependency check plugin to dowload suppression file from Dependency Shield and upload the reports."
+            description = "A plugin that cofigures OWASP dependency check plugin to download suppression file from Dependency Shield and upload the reports."
             implementationClass = "com.dependencyshield.gradle.DependencyShieldPlugin"
             tags.set(listOf("dependencyshield", "security", "vulnerabilities", "owasp", "dependency-check"))
         }
